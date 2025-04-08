@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vai me dar folga?</title>
+  <style>
+    body {
+      background-color: #f0f8e2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 100px;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #3c763d;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      margin: 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    #nao {
+      background-color: #d9534f;
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #sim {
+      background-color: #5cb85c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Você vai me dar folga ?</h1>
+
+  <!-- Botões -->
+  <button id="sim" class="btn">SIM</button>
+  <button id="nao" class="btn">NÃO</button>
+
+  <script>
+    const btnNao = document.getElementById('nao');
+    const btnSim = document.getElementById('sim');
+
+    // Botão NÃO foge do mouse
+    btnNao.addEventListener('mouseover', () => {
+      const largura = window.innerWidth - btnNao.offsetWidth;
+      const altura = window.innerHeight - btnNao.offsetHeight;
+
+      const randomX = Math.random() * largura;
+      const randomY = Math.random() * altura;
+
+      btnNao.style.left = `${randomX}px`;
+      btnNao.style.top = `${randomY}px`;
+    });
+
+    // Botão SIM redireciona para um vídeo
+    btnSim.addEventListener('click', () => {
+      window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+    });
+  </script>
+</body>
+</html>
